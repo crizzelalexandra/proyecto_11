@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullBike</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="overlay">
+            <img src="img/logo.png" alt="FullBike Logo" class="logo">
+            <h1>FullBike</h1>
+            <p>Pedaleando contigo siempre</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#bicicletas">Catálogo Bicicletas</a></li>
+                <li><a href="#repuestos">Catálogo Repuestos</a></li>
+                <li><a href="#mantencion">Solicitar Mantención</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="bicicletas">
+        <h2>Catálogo de Bicicletas</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Bicicleta 1">
+                <h3>Bicicleta Montaña</h3>
+                <p>$350.000</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Bicicleta 2">
+                <h3>Bicicleta Ruta</h3>
+                <p>$420.000</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="repuestos">
+        <h2>Catálogo de Repuestos</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Repuesto 1">
+                <h3>Llantas</h3>
+                <p>$25.000</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200" alt="Repuesto 2">
+                <h3>Cadenas</h3>
+                <p>$15.000</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mantencion">
+        <h2>Solicitar Mantención</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" required>
+            
+            <label for="detalle">Detalle del servicio:</label>
+            <textarea id="detalle" required></textarea>
+            
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 FullBike - Pedaleando contigo siempre</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
