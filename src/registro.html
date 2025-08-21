@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            padding: 20px;
+        }
+        .contenedor {
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Completa tus datos de pago</h2>
+        <p id="detalle-producto"></p>
+        
+        <form id="form-pago">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" required>
+
+            <label for="numero-tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numero-tarjeta" maxlength="16" placeholder="16 dígitos" required>
+
+            <label for="fecha">Fecha de Expiración:</label>
+            <input type="month" id="fecha" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" maxlength="3" required>
+
+            <button type="submit">Finalizar Compra</button>
+        </form>
+    </div>
+
+    <script>
+        // Obtener parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const producto = params.get('producto');
+        const precio = params.get('precio');
+        const pago = params.get('pago');
+
+        document.getElementById('detalle-producto').textContent = 
+            `Producto: ${producto} | Precio: $${precio} | Pago: ${pago}`;
+
+        // Simular envío de formulario
+        document.getElementById('form-pago').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Pago realizado con éxito!\nGracias por tu compra.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
