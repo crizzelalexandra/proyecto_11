@@ -21,6 +21,23 @@
             </ul>
         </nav>
     </header>
+    <section class="carrusel">
+    <div class="slider">
+        <div class="slide active">
+            <img src="https://i.postimg.cc/6prNy9wV/descarga-7.jpg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="https://i.postimg.cc/9QTksHdS/descarga-5.jpg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="https://i.postimg.cc/Fsfrs57G/descarga-6.jpg" alt="Imagen 3">
+        </div>
+    </div>
+    <div class="controles">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
+    </div>
+</section>
 
     <section id="bicicletas">
         <h2>Catálogo de Bicicletas</h2>
@@ -29,11 +46,13 @@
                 <img src="https://i.postimg.cc/85WmwMqr/Commencal-Meta-HT-Trail-2015-La-nueva-arma-de-doble-filo-de-Commencal.jpg" alt="Bicicleta 1" style="width:100%;">
                 <h3>Bicicleta Montaña</h3>
                 <p>$350.000</p>
+                <button class="comprar" data-producto="bicicleta Montaña" data-precio="350000">comprar</button>
             </div>
             <div class="card">
                 <img src="https://i.postimg.cc/9QTksHdS/descarga-5.jpg" alt="Bicicleta 2"  style="width:100%;">
                 <h3>Bicicleta Ruta</h3>
                 <p>$420.000</p>
+                <button class="comprar" data-producto="bicicleta ruta" data-precio="420000">comprar</button>
             </div>
         </div>
     </section>
@@ -71,6 +90,25 @@
     </section>
 
     <footer>
+        <div id="modal-pago" class="modal" style="display:none;">
+    <div class="modal-content" style="background:white; padding:20px; border-radius:10px; max-width:400px; margin:auto;">
+        <span id="cerrar-modal" style="cursor:pointer; float:right;">&times;</span>
+        <h2>Finalizar Compra</h2>
+        <p id="detalle-compra"></p>
+        
+        <label for="metodo-pago">Forma de pago:</label>
+        <select id="metodo-pago" required>
+            <option value="">Selecciona...</option>
+            <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+            <option value="transferencia">Transferencia Bancaria</option>
+            <option value="paypal">PayPal</option>
+        </select>
+
+        <button id="confirmar-compra" style="margin-top:10px;">Confirmar Compra</button>
+    </div>
+</div>
+
+
         <p>&copy; 2025 FullBike - Pedaleando contigo siempre</p>
     </footer>
     <script src="script.js"></script>

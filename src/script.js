@@ -31,3 +31,65 @@ setInterval(() => {
     index++;
     mostrarSlide(index);
 }, 4000);
+
+
+// Seleccionar todos los botones "Comprar"
+const botonesComprar = document.querySelectorAll('.comprar');
+const modal = document.getElementById('modal-pago');
+const cerrarModal = document.getElementById('cerrar-modal');
+const detalleCompra = document.getElementById('detalle-compra');
+const confirmarCompra = document.getElementById('confirmar-compra');
+
+let productoSeleccionado = '';
+let precioSeleccionado = '';
+
+botonesComprar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        productoSeleccionado = boton.getAttribute('data-producto');
+        precioSeleccionado = boton.getAttribute('data-precio');
+
+        detalleCompra.textContent = `Producto: ${productoSeleccionado} - Precio: $${precioSeleccionado}`;
+        modal.style.display = 'block';
+    });
+});
+
+cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+confirmarCompra.addEventListener('click', () => {
+    const metodoPago = document.getElementById('metodo-pago').value;
+    if (metodoPago === '') {
+        alert('Por favor, selecciona un método de pago.');
+    } else {
+        alert(`Compra confirmada:\nProducto: ${productoSeleccionado}\nPrecio: $${precioSeleccionado}\nPago con: ${metodoPago}`);
+        modal.style.display = 'none';
+    }
+});
+
+// Cerrar modal al hacer clic fuera del contenido
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
