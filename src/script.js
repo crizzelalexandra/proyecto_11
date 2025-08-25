@@ -26,7 +26,7 @@ next.addEventListener('click', () => {
     mostrarSlide(index);
 });
 
-// Cambio automático cada 4 segundos
+// Cambio automático cada 6 segundos
 setInterval(() => {
     index++;
     mostrarSlide(index);
